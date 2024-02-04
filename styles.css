@@ -79,7 +79,7 @@ p, li, tr{
     font-size: 1.1rem;
 }
 
-ul, ol, code{
+ul, ol, .block-code{
     margin-left: 1.5rem;
     list-style-position: inside;
     padding: 1rem;
