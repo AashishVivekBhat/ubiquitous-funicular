@@ -36,9 +36,10 @@ body{
     margin-right: 2px;
 }
 
-#navbar header{
-    margin: 0;
+#nav-head{
     padding: 10px;
+    font-size: 1.5rem;
+    overflow-wrap:break-word;
 }
 
 #navbar a{
@@ -113,10 +114,20 @@ code{
 
 
 @media screen and (max-width:735px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+    }
+    
     .nav-link, header{
         font-size: 1rem;
         padding: 0.5rem;
         transition: 0.3s;
+    }
+    
+    #main-doc{
+        margin-left: 20%;
     }
 }
 
