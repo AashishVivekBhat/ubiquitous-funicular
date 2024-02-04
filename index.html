@@ -1,13 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Documentation Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h2>Hello World!!</h2>
-    <script src="index.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <!-- Navigation Menu -->
+    <nav id="navbar">
+      <header>JS Documentation</header>
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a>
+      <a class="nav-link" href="#Declaration">Declaration</a>
+      <a class="nav-link" href="#Data_Structures_and_Types">Data Structures and Types</a>
+      <a class="nav-link" href="#Conditional_Statements">Conditional Statements</a>
+      <a class="nav-link" href="#if_else_Statements">if else Statements</a>
+      <a class="nav-link" href="#switch_Statements">switch Statements</a>
+      <a class="nav-link" href="#for_Loop">for Loop</a>
+      <a class="nav-link" href="#while_Loop">while Loop</a>
+      <a class="nav-link" href="#Functions">Functions</a>
+      <a class="nav-link" href="#Expressions_and_Operators">Expressions and Operators</a>
+      <a class="nav-link" href="#Reference">Reference</a>
+
+    </nav>
+
+
+    <!-- Main Content with topics -->
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>
+          JavaScript is a cross-platform, object-oriented scripting language
+          used to make webpages interactive (e.g., having complex animations,
+          clickable buttons, popup menus, etc.). There are also more advanced
+          server side versions of JavaScript such as Node.js, which allow you to
+          add more functionality to a website than downloading files (such as
+          realtime collaboration between multiple computers). Inside a host
+          environment (for example, a web browser), JavaScript can be connected
+          to the objects of its environment to provide programmatic control over
+          them. Core JavaScript can be extended for a variety of purposes by
+          supplementing it with additional objects; for example:
+        </p>
+        <ul>
+          <li>
+            Client-side JavaScript extends the core language by supplying
+            objects to control a browser and its Document Object Model (DOM).
+            For example, client-side extensions allow an application to place
+            elements on an HTML form and respond to user events such as mouse
+            clicks, form input, and page navigation.
+          </li>
+          <li>
+            Server-side JavaScript extends the core language by supplying
+            objects relevant to running JavaScript on a server. For example,
+            server-side extensions allow an application to communicate with a
+            database, provide continuity of information from one invocation to
+            another of the application, or perform file manipulations on a
+            server.
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="JavaScript_and_Java">
+        <header>JavaScript and Java</header>
+        <p>
+          JavaScript and Java are similar in some ways but fundamentally
+          different in some others. The JavaScript language resembles Java but
+          does not have Java's static typing and strong type checking.
+          JavaScript follows most Java expression syntax, naming conventions and
+          basic control-flow constructs which was the reason why it was renamed
+          from LiveScript to JavaScript.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <td>JavaScript</td>
+              <td>Java</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Object-oriented. No distinction between types of objects.
+                Inheritance is through the prototype mechanism, and properties
+                and methods can be added to any object dynamically.
+              </td>
+              <td>
+                Class-based. Objects are divided into classes and instances with
+                all inheritance through the class hierarchy. Classes and
+                instances cannot have properties or methods added dynamically.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Variable data types are not declared (dynamic typing, loosely
+                typed).
+              </td>
+              <td>
+                Variable data types must be declared (static typing, strongly
+                typed).
+              </td>
+            </tr>
+            <tr>
+              <td>Cannot automatically write to hard disk.</td>
+              <td>Can automatically write to hard disk.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="Declaration">
+        <header>Declaration</header>
+        <p>You can declare a variable in two ways:</p>
+        <ul>
+          <li>
+            With the keyword var. For example, var x = 42. This syntax can be
+            used to declare both local and global variables, depending on the
+            <i>execution context</i>.
+          </li>
+          <li>
+            With the keyword const or let. For example, let y = 13. This syntax
+            can be used to declare a block-scope local variable. (See Variable
+            scope below.)
+          </li>
+        </ul>
+        <p>
+          You can declare variables to unpack values using the destructuring
+          assignment syntax. For example, <code>const { bar } = foo</code>. This
+          will create a variable named <code>bar</code> and assign to it the
+          value corresponding to the key of the same name from our object
+          <code>foo</code>.
+        </p>
+        <p>
+          Variables should always be declared before they are used. JavaScript
+          used to allow assigning to undeclared variables, which creates an
+          undeclared global variable. This is an error in strict mode and should
+          be avoided altogether.
+        </p>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="Data_Structures_and_Types">
+        <header>Data Structures and Types</header>
+        <p>The latest ECMAScript standard defines eight data types:</p>
+        <ul>
+          <li>
+            Seven data types that are primitives:
+            <ol>
+              <li>Boolean. <code>true</code> and <code>false</code>.</li>
+              <li>null. A special keyword denoting a null value.</li>
+              <li>
+                undefined. A top-level property whose value is not defined.
+              </li>
+              <li>
+                Number. An integer or floating point number. For example: 42 or
+                3.14159.
+              </li>
+              <li>
+                BigInt. An integer with arbitrary precision. For example:
+                9007199254740992n.
+              </li>
+              <li>
+                String. A sequence of characters that represent a text value.
+                For example: <code>"Howdy"</code>.
+              </li>
+              <li>
+                Symbol. A data type whose instances are unique and immutable.
+              </li>
+            </ol>
+          </li>
+          <li>and Objects</li>
+        </ul>
+
+        <p>
+          Although these data types are relatively few, they enable you to
+          perform useful operations with your applications. Functions are the
+          other fundamental elements of the language. While functions are
+          technically a kind of object, you can think of objects as named
+          containers for values, and functions as procedures that your script
+          can perform.
+        </p>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="Conditional_Statements">
+        <header>Conditional Statements</header>
+        <p>
+          The most basic statement is a block statement, which is used to group
+          statements. The block is delimited by a pair of curly braces:
+        </p>
+        <pre>
+          <code class="block-code">
+          {
+            statement1;
+            statement2;
+            // …
+            statementN;
+          }
+          </code>
+        </pre>
+
+        <p>
+          Example: Block statements are commonly used with control flow
+          statements (if, for, while).
+        </p>
+
+        <pre>
+          <code class="block-code">
+            while (x < 10) {
+            x++;
+            }
+          </code>
+        </pre>
+        <p>Here, <code>{ x++; }</code> is the block statement.</p>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="if_else_Statements">
+        <header>if else Statements</header>
+        <p>
+          Use the if statement to execute a statement if a logical condition is
+          true. Use the optional else clause to execute a statement if the
+          condition is false. An if statement looks like this:
+        </p>
+        <pre>
+          <code class="block-code">
+            if (condition) {
+              statement1;
+            } else {
+              statement2;
+            }            
+          </code>
+        </pre>
+
+        <p>
+          Here, the condition can be any expression that evaluates to true or
+          false. If condition evaluates to true, statement_1 is executed.
+          Otherwise, statement_2 is executed. statement_1 and statement_2 can be
+          any statement, including further nested if statements. You can also
+          compound the statements using else if to have multiple conditions
+          tested in sequence, as follows:
+        </p>
+        <pre>
+          <code class="block-code">
+            if (condition1) {
+              statement1;
+            } else if (condition2) {
+              statement2;
+            } else if (conditionN) {
+              statementN;
+            } else {
+              statementLast;
+            }            
+          </code>
+        </pre>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="switch_Statements">
+        <header>switch Statements</header>
+
+        <p>
+          A switch statement allows a program to evaluate an expression and
+          attempt to match the expression's value to a case label. If a match is
+          found, the program executes the associated statement. A switch
+          statement looks like this:
+        </p>
+        <pre>
+          <code class="block-code">
+            switch (expression) {
+              case label1:
+                statements1;
+                break;
+              case label2:
+                statements2;
+                break;
+              // …
+              default:
+                statementsDefault;
+            }            
+          </code>
+        </pre>
+        <ul>
+          <li>
+            The program first looks for a case clause with a label matching the
+            value of expression and then transfers control to that clause,
+            executing the associated statements.
+          </li>
+          <li>
+            If no matching label is found, the program looks for the optional
+            default clause.
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+
+      <section class="main-section"  id="for_Loop">
+        <header>for Loop</header>
+        <p>
+          A 'for' loop repeats until a specified condition evaluates to false.
+          The JavaScript 'for' loop is similar to the Java and C 'for' loop. A
+          for statement looks as follows:
+        </p>
+        <pre>
+          <code class="block-code">
+            for (initialization; condition; afterthought) 
+            // statement
+          </code>
+        </pre>
+        <p>When a for loop executes, the following occurs:</p>
+        <ol>
+          <li>
+            The initializing expression initialization, if any, is executed.
+            This expression usually initializes one or more loop counters, but
+            the syntax allows an expression of any degree of complexity. This
+            expression can also declare variables.
+          </li>
+          <li>
+            The condition expression is evaluated. If the value of condition is
+            true, the loop statements execute. Otherwise, the for loop
+            terminates. (If the condition expression is omitted entirely, the
+            condition is assumed to be true.)
+          </li>
+          <li>
+            The statement executes. To execute multiple statements, use a block
+            statement ({ }) to group those statements.
+          </li>
+          <li>If present, the update expression afterthought is executed.</li>
+          <li>Control returns to Step 2.</li>
+        </ol>
+      </section>
+
+      <hr />
+      <section class="main-section"  id="while_Loop">
+        <header>while Loop</header>
+        <p>
+          A while statement executes its statements as long as a specified
+          condition evaluates to true. A while statement looks as follows:
+        </p>
+        <pre>
+          <code class="block-code">
+            while (condition)
+            //statement
+          </code>
+        </pre>
+        <p>
+          If the condition becomes false, statement within the loop stops
+          executing and control passes to the statement following the loop. The
+          condition test occurs before statement in the loop is executed. If the
+          condition returns true, statement is executed and the condition is
+          tested again. If the condition returns false, execution stops, and
+          control is passed to the statement following while. To execute
+          multiple statements, use a block statement ({ }) to group those
+          statements.
+        </p>
+      </section>
+
+      <hr />
+      <section class="main-section"  id="Functions">
+        <header>Functions</header>
+        <p>
+          Functions are one of the fundamental building blocks in JavaScript. A
+          function in JavaScript is similar to a procedure—a set of statements
+          that performs a task or calculates a value, but for a procedure to
+          qualify as a function, it should take some input and return an output
+          where there is some obvious relationship between the input and the
+          output. To use a function, you must define it somewhere in the scope
+          from which you wish to call it.
+        </p>
+        <p>
+          A function definition (also called a function declaration, or function
+          statement) consists of the function keyword, followed by:
+        </p>
+        <ul>
+          <li>The name of the function.</li>
+          <li>
+            A list of parameters to the function, enclosed in parentheses and
+            separated by commas.
+          </li>
+          <li>
+            The JavaScript statements that define the function, enclosed in
+            curly braces, { /* … */ }.
+          </li>
+        </ul>
+
+        <pre>
+          <code class="block-code">
+            function square(number) {
+              return number * number;
+            }
+          </code>
+        </pre>
+
+        <p>
+          The function square takes one parameter, called number. The function
+          consists of one statement that says to return the parameter of the
+          function (that is, number) multiplied by itself. The return statement
+          specifies the value returned by the function, which is number *
+          number.
+        </p>
+      </section>
+      <hr />
+      <section class="main-section"  id="Expressions_and_Operators">
+        <header>Expressions and Operators</header>
+        <p>
+          At a high level, an expression is a valid unit of code that resolves
+          to a value. There are two types of expressions: those that have side
+          effects (such as assigning values) and those that purely evaluate. The
+          expression 'x = 7' is an example of the first type. This expression
+          uses the '=' operator to assign the value seven to the variable x. The
+          expression itself evaluates to 7. The expression '3 + 4' is an example
+          of the second type. This expression uses the + operator to add 3 and 4
+          together and produces a value, 7. However, if it's not eventually part
+          of a bigger construct (for example, a variable declaration like const
+          z = 3 + 4), its result will be immediately discarded — this is usually
+          a programmer mistake because the evaluation doesn't produce any
+          effects. As the examples above also illustrate, all complex
+          expressions are joined by operators, such as = and +. In this section,
+          we will introduce the following operators:
+        </p>
+        <ul>
+          <li>Assignment operators</li>
+          <li>Comparison operators</li>
+          <li>Arithmetic operators</li>
+          <li>Bitwise operators</li>
+          <li>Logical operators</li>
+          <li>BigInt operators</li>
+          <li>String operators</li>
+          <li>Conditional (ternary) operator</li>
+          <li>Comma operator</li>
+          <li>Unary operators</li>
+          <li>Relational operators></li>
+        </ul>
+      </section>
+      <hr />
+      <section class="main-section"  id="Reference">
+        <header>Reference</header>
+        <p>
+          All the documentation is taken from
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+            >MDN</a
+          >
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
